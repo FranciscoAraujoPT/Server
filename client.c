@@ -7,7 +7,7 @@
 #include<unistd.h>
 
 #define MAX 250 
-#define PORT 8080 
+#define PORT 8888
 #define SA struct sockaddr 
 
 void func(int sockfd) 
@@ -35,11 +35,11 @@ void func(int sockfd)
 	} 
 } 
 
-int main() 
+int main(int argc , char *argv[]) 
 { 
 	int sockfd, connfd; 
 	struct sockaddr_in servaddr, cli; 
-
+	
 	// socket create and varification 
 	sockfd = socket(AF_INET, SOCK_STREAM, 0); 
 	if (sockfd == -1) { 
@@ -52,7 +52,7 @@ int main()
 
 	// assign IP, PORT 
 	servaddr.sin_family = AF_INET; 
-	servaddr.sin_addr.s_addr = inet_addr("192.168.1.118"); 
+	servaddr.sin_addr.s_addr = inet_addr("94.60.182.32"); 
 	servaddr.sin_port = htons(PORT); 
 
 	// connect the client socket to server socket 
